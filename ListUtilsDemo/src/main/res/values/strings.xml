@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ListUtilsDemo</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="add_header">Add Header</string>
+    <string name="add_one">Add One Item</string>
+    <string name="add_two">Add Two Items</string>
+    <string name="add_three">Add Three Items</string>
+
+</resources>

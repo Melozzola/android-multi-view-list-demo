@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/add_header"
+        android:title="@string/add_header"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item
+        android:id="@+id/add_one"
+        android:title="@string/add_one"
+        android:orderInCategory="200"
+        android:showAsAction="never" />
+
+    <item
+        android:id="@+id/add_two"
+        android:title="@string/add_two"
+        android:orderInCategory="200"
+        android:showAsAction="never" />
+
+    <item
+        android:id="@+id/add_three"
+        android:title="@string/add_three"
+        android:orderInCategory="200"
+        android:showAsAction="never" />
+
+</menu>

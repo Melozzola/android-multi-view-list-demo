@@ -9,6 +9,73 @@ package riz.silvano.listutilsdemo;
 
 public final class R {
     public static final class attr {
+        /**  StickyListHeaders attributes 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int hasStickyHeaders=0x7f010008;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int isDrawingListUnderStickyHeader=0x7f010009;
+        /**  A drawable to use as the background of the Header View 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int ptrHeaderBackground=0x7f010001;
+        /**  The height of the Header View 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int ptrHeaderHeight=0x7f010002;
+        /**  From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values/values.xml 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int ptrHeaderStyle=0x7f010000;
+        /**  The Text Appearance of the Header View's Title text 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int ptrHeaderTitleTextAppearance=0x7f010003;
+        /**  The color that the Progress Bar should be tinted with 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int ptrProgressBarColor=0x7f010004;
+        /**  Text to show to prompt the user is pull (or keep pulling) 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+         */
+        public static final int ptrPullText=0x7f010005;
+        /**  Text to show to tell the user that a refresh is currently in progress 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+         */
+        public static final int ptrRefreshingText=0x7f010006;
+        /**  Text to show to tell the user has scrolled enough to refresh 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+         */
+        public static final int ptrReleaseText=0x7f010007;
     }
     public static final class dimen {
         /**  From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/src/main/res/values/dimens.xml 
@@ -19,39 +86,83 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int ptr_progress_horizontal_holo_center=0x7f020001;
+        public static final int ptr_progress_indeterminate_horizontal_holo=0x7f020002;
+        public static final int ptr_progress_primary_holo=0x7f020003;
+        public static final int ptr_progressbar_indeterminate_holo1=0x7f020004;
+        public static final int ptr_progressbar_indeterminate_holo2=0x7f020005;
+        public static final int ptr_progressbar_indeterminate_holo3=0x7f020006;
+        public static final int ptr_progressbar_indeterminate_holo4=0x7f020007;
+        public static final int ptr_progressbar_indeterminate_holo5=0x7f020008;
+        public static final int ptr_progressbar_indeterminate_holo6=0x7f020009;
+        public static final int ptr_progressbar_indeterminate_holo7=0x7f02000a;
+        public static final int ptr_progressbar_indeterminate_holo8=0x7f02000b;
     }
     public static final class id {
-        public static final int add_header=0x7f080006;
-        public static final int add_one=0x7f080007;
-        public static final int add_three=0x7f080009;
-        public static final int add_two=0x7f080008;
-        public static final int lvMultiItem=0x7f080005;
-        public static final int tvHeader=0x7f080000;
-        public static final int tvValue=0x7f080001;
-        public static final int tvValue1=0x7f080002;
-        public static final int tvValue2=0x7f080003;
-        public static final int tvValue3=0x7f080004;
+        public static final int add_header=0x7f05000d;
+        public static final int add_one=0x7f05000e;
+        public static final int add_three=0x7f050010;
+        public static final int add_two=0x7f05000f;
+        public static final int btnActionOne=0x7f050003;
+        public static final int btnActionTwo=0x7f050004;
+        public static final int imgCover=0x7f050009;
+        public static final int imgProfile=0x7f05000a;
+        public static final int lvMultiItem=0x7f050005;
+        /**  From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values/values.xml 
+         */
+        public static final int ptr_content=0x7f050000;
+        public static final int ptr_progress=0x7f050001;
+        public static final int ptr_text=0x7f050002;
+        public static final int tvDate=0x7f050008;
+        public static final int tvDescription=0x7f050006;
+        public static final int tvLocation=0x7f05000c;
+        public static final int tvName=0x7f05000b;
+        public static final int tvQuantity=0x7f050007;
     }
     public static final class layout {
-        public static final int item_header=0x7f030000;
-        public static final int item_one_line=0x7f030001;
-        public static final int item_three_lines=0x7f030002;
-        public static final int item_two_lines=0x7f030003;
-        public static final int list_activity=0x7f030004;
+        public static final int default_header=0x7f030000;
+        public static final int list_actions_row=0x7f030001;
+        public static final int list_activity=0x7f030002;
+        public static final int list_item_row=0x7f030003;
+        public static final int list_profile_row=0x7f030004;
     }
     public static final class menu {
-        public static final int list=0x7f070000;
+        public static final int list=0x7f080000;
     }
     public static final class string {
         /**  From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/src/main/res/values/strings.xml 
          */
-        public static final int action_settings=0x7f050000;
-        public static final int add_header=0x7f050001;
-        public static final int add_one=0x7f050002;
-        public static final int add_three=0x7f050003;
-        public static final int add_two=0x7f050004;
-        public static final int app_name=0x7f050005;
-        public static final int hello_world=0x7f050006;
+        public static final int action_settings=0x7f060000;
+        public static final int add_header=0x7f060001;
+        public static final int add_one=0x7f060002;
+        public static final int add_three=0x7f060003;
+        public static final int add_two=0x7f060004;
+        public static final int app_name=0x7f060005;
+        public static final int hello_world=0x7f060006;
+        /**  From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-ar/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-cs/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-de/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-es/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-fi/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-fr/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-he/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-it/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-iw/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-ja/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-ko/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-nl/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-pl/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-pt/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-pt-rBR/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-ro/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-ru/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-sv/values.xml 
+ From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values-zh/values.xml 
+         */
+        public static final int pull_to_refresh_pull_label=0x7f060007;
+        public static final int pull_to_refresh_refreshing_label=0x7f060008;
+        public static final int pull_to_refresh_release_label=0x7f060009;
     }
     public static final class style {
         /**  From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/src/main/res/values/styles.xml 
@@ -65,9 +176,325 @@ public final class R {
  From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/src/main/res/values-v14/styles.xml 
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
+        /**  From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/ComGithubChrisbanesActionbarpulltorefreshLibrary08.aar/res/values/values.xml 
+         */
+        public static final int Widget_PullToRefresh_ProgressBar_Horizontal_Center=0x7f070002;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a PullToRefreshHeader.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PullToRefreshHeader_ptrHeaderBackground riz.silvano.listutilsdemo:ptrHeaderBackground}</code></td><td> A drawable to use as the background of the Header View </td></tr>
+           <tr><td><code>{@link #PullToRefreshHeader_ptrHeaderHeight riz.silvano.listutilsdemo:ptrHeaderHeight}</code></td><td> The height of the Header View </td></tr>
+           <tr><td><code>{@link #PullToRefreshHeader_ptrHeaderTitleTextAppearance riz.silvano.listutilsdemo:ptrHeaderTitleTextAppearance}</code></td><td> The Text Appearance of the Header View's Title text </td></tr>
+           <tr><td><code>{@link #PullToRefreshHeader_ptrProgressBarColor riz.silvano.listutilsdemo:ptrProgressBarColor}</code></td><td> The color that the Progress Bar should be tinted with </td></tr>
+           <tr><td><code>{@link #PullToRefreshHeader_ptrPullText riz.silvano.listutilsdemo:ptrPullText}</code></td><td> Text to show to prompt the user is pull (or keep pulling) </td></tr>
+           <tr><td><code>{@link #PullToRefreshHeader_ptrRefreshingText riz.silvano.listutilsdemo:ptrRefreshingText}</code></td><td> Text to show to tell the user that a refresh is currently in progress </td></tr>
+           <tr><td><code>{@link #PullToRefreshHeader_ptrReleaseText riz.silvano.listutilsdemo:ptrReleaseText}</code></td><td> Text to show to tell the user has scrolled enough to refresh </td></tr>
+           </table>
+           @see #PullToRefreshHeader_ptrHeaderBackground
+           @see #PullToRefreshHeader_ptrHeaderHeight
+           @see #PullToRefreshHeader_ptrHeaderTitleTextAppearance
+           @see #PullToRefreshHeader_ptrProgressBarColor
+           @see #PullToRefreshHeader_ptrPullText
+           @see #PullToRefreshHeader_ptrRefreshingText
+           @see #PullToRefreshHeader_ptrReleaseText
+         */
+        public static final int[] PullToRefreshHeader = {
+            0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004,
+            0x7f010005, 0x7f010006, 0x7f010007
+        };
+        /**
+          <p>
+          @attr description
+           A drawable to use as the background of the Header View 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name riz.silvano.listutilsdemo:ptrHeaderBackground
+        */
+        public static final int PullToRefreshHeader_ptrHeaderBackground = 0;
+        /**
+          <p>
+          @attr description
+           The height of the Header View 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          <p>This is a private symbol.
+          @attr name riz.silvano.listutilsdemo:ptrHeaderHeight
+        */
+        public static final int PullToRefreshHeader_ptrHeaderHeight = 1;
+        /**
+          <p>
+          @attr description
+           The Text Appearance of the Header View's Title text 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name riz.silvano.listutilsdemo:ptrHeaderTitleTextAppearance
+        */
+        public static final int PullToRefreshHeader_ptrHeaderTitleTextAppearance = 2;
+        /**
+          <p>
+          @attr description
+           The color that the Progress Bar should be tinted with 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name riz.silvano.listutilsdemo:ptrProgressBarColor
+        */
+        public static final int PullToRefreshHeader_ptrProgressBarColor = 3;
+        /**
+          <p>
+          @attr description
+           Text to show to prompt the user is pull (or keep pulling) 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+          <p>This is a private symbol.
+          @attr name riz.silvano.listutilsdemo:ptrPullText
+        */
+        public static final int PullToRefreshHeader_ptrPullText = 4;
+        /**
+          <p>
+          @attr description
+           Text to show to tell the user that a refresh is currently in progress 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+          <p>This is a private symbol.
+          @attr name riz.silvano.listutilsdemo:ptrRefreshingText
+        */
+        public static final int PullToRefreshHeader_ptrRefreshingText = 5;
+        /**
+          <p>
+          @attr description
+           Text to show to tell the user has scrolled enough to refresh 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+          <p>This is a private symbol.
+          @attr name riz.silvano.listutilsdemo:ptrReleaseText
+        */
+        public static final int PullToRefreshHeader_ptrReleaseText = 6;
+        /**  From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/build/exploded-bundles/SeEmilsjolanderStickylistheadersLibrary200SNAPSHOT.aar/res/values/values.xml 
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_cacheColorHint android:cacheColorHint}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_choiceMode android:choiceMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_clipToPadding android:clipToPadding}</code></td><td> Android attributes </td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_divider android:divider}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_dividerHeight android:dividerHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_drawSelectorOnTop android:drawSelectorOnTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_fadingEdgeLength android:fadingEdgeLength}</code></td><td> ListView attributes </td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_fastScrollEnabled android:fastScrollEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_listSelector android:listSelector}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_padding android:padding}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_paddingBottom android:paddingBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_paddingLeft android:paddingLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_paddingRight android:paddingRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_paddingTop android:paddingTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_requiresFadingEdge android:requiresFadingEdge}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_scrollbarStyle android:scrollbarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_android_scrollingCache android:scrollingCache}</code></td><td></td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_hasStickyHeaders riz.silvano.listutilsdemo:hasStickyHeaders}</code></td><td> StickyListHeaders attributes </td></tr>
+           <tr><td><code>{@link #StickyListHeadersListView_isDrawingListUnderStickyHeader riz.silvano.listutilsdemo:isDrawingListUnderStickyHeader}</code></td><td></td></tr>
+           </table>
+           @see #StickyListHeadersListView_android_cacheColorHint
+           @see #StickyListHeadersListView_android_choiceMode
+           @see #StickyListHeadersListView_android_clipToPadding
+           @see #StickyListHeadersListView_android_divider
+           @see #StickyListHeadersListView_android_dividerHeight
+           @see #StickyListHeadersListView_android_drawSelectorOnTop
+           @see #StickyListHeadersListView_android_fadingEdgeLength
+           @see #StickyListHeadersListView_android_fastScrollEnabled
+           @see #StickyListHeadersListView_android_listSelector
+           @see #StickyListHeadersListView_android_padding
+           @see #StickyListHeadersListView_android_paddingBottom
+           @see #StickyListHeadersListView_android_paddingLeft
+           @see #StickyListHeadersListView_android_paddingRight
+           @see #StickyListHeadersListView_android_paddingTop
+           @see #StickyListHeadersListView_android_requiresFadingEdge
+           @see #StickyListHeadersListView_android_scrollbarStyle
+           @see #StickyListHeadersListView_android_scrollingCache
+           @see #StickyListHeadersListView_hasStickyHeaders
+           @see #StickyListHeadersListView_isDrawingListUnderStickyHeader
+         */
+        public static final int[] StickyListHeadersListView = {
+            0x0101007f, 0x010100d5, 0x010100d6, 0x010100d7,
+            0x010100d8, 0x010100d9, 0x010100e0, 0x010100eb,
+            0x010100fb, 0x010100fc, 0x010100fe, 0x01010101,
+            0x01010129, 0x0101012a, 0x0101012b, 0x01010226,
+            0x010103a5, 0x7f010008, 0x7f010009
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#cacheColorHint}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:cacheColorHint
+        */
+        public static final int StickyListHeadersListView_android_cacheColorHint = 11;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#choiceMode}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:choiceMode
+        */
+        public static final int StickyListHeadersListView_android_choiceMode = 14;
+        /**
+          <p>
+          @attr description
+           Android attributes 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#clipToPadding}.
+          @attr name android:clipToPadding
+        */
+        public static final int StickyListHeadersListView_android_clipToPadding = 7;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#divider}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:divider
+        */
+        public static final int StickyListHeadersListView_android_divider = 12;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#dividerHeight}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:dividerHeight
+        */
+        public static final int StickyListHeadersListView_android_dividerHeight = 13;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#drawSelectorOnTop}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:drawSelectorOnTop
+        */
+        public static final int StickyListHeadersListView_android_drawSelectorOnTop = 9;
+        /**
+          <p>
+          @attr description
+           ListView attributes 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#fadingEdgeLength}.
+          @attr name android:fadingEdgeLength
+        */
+        public static final int StickyListHeadersListView_android_fadingEdgeLength = 6;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fastScrollEnabled}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:fastScrollEnabled
+        */
+        public static final int StickyListHeadersListView_android_fastScrollEnabled = 15;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#listSelector}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:listSelector
+        */
+        public static final int StickyListHeadersListView_android_listSelector = 8;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#padding}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:padding
+        */
+        public static final int StickyListHeadersListView_android_padding = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#paddingBottom}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:paddingBottom
+        */
+        public static final int StickyListHeadersListView_android_paddingBottom = 5;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#paddingLeft}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:paddingLeft
+        */
+        public static final int StickyListHeadersListView_android_paddingLeft = 2;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#paddingRight}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:paddingRight
+        */
+        public static final int StickyListHeadersListView_android_paddingRight = 4;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#paddingTop}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:paddingTop
+        */
+        public static final int StickyListHeadersListView_android_paddingTop = 3;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#requiresFadingEdge}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:requiresFadingEdge
+        */
+        public static final int StickyListHeadersListView_android_requiresFadingEdge = 16;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#scrollbarStyle}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:scrollbarStyle
+        */
+        public static final int StickyListHeadersListView_android_scrollbarStyle = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#scrollingCache}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+          @attr name android:scrollingCache
+        */
+        public static final int StickyListHeadersListView_android_scrollingCache = 10;
+        /**
+          <p>
+          @attr description
+           StickyListHeaders attributes 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name riz.silvano.listutilsdemo:hasStickyHeaders
+        */
+        public static final int StickyListHeadersListView_hasStickyHeaders = 17;
+        /**
+          <p>This symbol is the offset where the {@link riz.silvano.listutilsdemo.R.attr#isDrawingListUnderStickyHeader}
+          attribute's value can be found in the {@link #StickyListHeadersListView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name riz.silvano.listutilsdemo:isDrawingListUnderStickyHeader
+        */
+        public static final int StickyListHeadersListView_isDrawingListUnderStickyHeader = 18;
+    };
 }

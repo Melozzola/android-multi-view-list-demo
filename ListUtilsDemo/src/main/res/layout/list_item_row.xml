@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvValue1"
+        android:id="@+id/tvDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
@@ -16,13 +16,23 @@
         android:paddingRight="5dp" />
 
     <TextView
-        android:id="@+id/tvValue2"
+        android:id="@+id/tvQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
+        android:background="@android:color/background_light"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
         android:background="@android:color/background_light"
         android:paddingBottom="5dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp" />
 
-</LinearLayout><!-- From: file:/Users/mele/repos/ListUtilsDemoProject/ListUtilsDemo/src/main/res/layout/item_two_lines.xml -->
+</LinearLayout>

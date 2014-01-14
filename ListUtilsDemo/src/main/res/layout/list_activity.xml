@@ -4,11 +4,30 @@
     android:layout_height="match_parent"
     tools:context=".ListActivity">
 
+    <!---->
     <ListView
         android:id="@+id/lvMultiItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </ListView>
+
+
+    <!--
+    <com.hb.views.PinnedSectionListView
+        android:id="@+id/lvMultiItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.hb.views.PinnedSectionListView>
+    -->
+
+    <!--
+    <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+        android:id="@+id/lvMultiItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    />
+    -->
+
 
 </RelativeLayout>

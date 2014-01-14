@@ -11,6 +11,9 @@ apply plugin: 'android'
 repositories {
     mavenLocal()
     mavenCentral()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
 }
 
 android {
@@ -26,5 +29,9 @@ android {
 dependencies {
     compile 'com.jakewharton:butterknife:2.0+'
     compile 'riz.silvano.listutils:listutils:0.0.1@aar'
+    compile 'se.emilsjolander.stickylistheaders:library:2.0.0-SNAPSHOT@aar'
+    compile 'com.hb.views.PinnedSectionListView:library:0.0.1@aar'
+    compile 'com.github.chrisbanes.actionbarpulltorefresh:library:0.8@aar'
     compile 'com.android.support:support-v4:18.0.0'
+    compile 'com.squareup.picasso:picasso:2.1+'
 }

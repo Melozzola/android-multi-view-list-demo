@@ -1,31 +1,48 @@
 package riz.silvano.listutilsdemo;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 
+import com.hb.views.PinnedSectionListView;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.InjectView;
 import butterknife.Views;
 import riz.silvano.listutils.ItemWrapper;
 import riz.silvano.listutils.MultiItemListAdapter;
+import riz.silvano.listutils.RowHolderFacade;
+import riz.silvano.listutils.ViewTypes;
+import riz.silvano.listutilsdemo.model.Actions;
 import riz.silvano.listutilsdemo.model.Header;
+import riz.silvano.listutilsdemo.model.Item;
 import riz.silvano.listutilsdemo.model.OneValue;
+import riz.silvano.listutilsdemo.model.Profile;
 import riz.silvano.listutilsdemo.model.ThreeValues;
 import riz.silvano.listutilsdemo.model.TwoValues;
+import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
+import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
+import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshAttacher;
 
 /**
  * Example of activity having a multi view list.
  * <p/>
  * Created by mele on 08/09/2013.
  */
-public class ListActivity extends Activity implements AdapterView.OnItemLongClickListener
+public class ListActivity extends Activity implements AdapterView.OnItemLongClickListener,
+                                                      PullToRefreshAttacher.OnRefreshListener
 {
 
     @InjectView(R.id.lvMultiItem)
@@ -33,6 +50,8 @@ public class ListActivity extends Activity implements AdapterView.OnItemLongClic
 
     MultiItemListAdapter adapter;
     ListViewHelper listViewHelper;
+
+    private PullToRefreshAttacher mPullToRefreshAttacher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -42,11 +61,56 @@ public class ListActivity extends Activity implements AdapterView.OnItemLongClic
 
         Views.inject(this);
 
+        /**
+         * Here we create a PullToRefreshAttacher manually without an Options instance.
+         * PullToRefreshAttacher will manually create one using default values.
+         */
+        mPullToRefreshAttacher = PullToRefreshAttacher.get(this);
+
         listViewHelper = new ListViewHelper();
-        adapter = new MultiItemListAdapter(listViewHelper, getLayoutInflater(), listViewHelper);
+        //adapter = new MultiItemListAdapter(listViewHelper, getLayoutInflater(), listViewHelper);
+        //adapter = new ListViewAdapter(listViewHelper, getLayoutInflater(), listViewHelper);
+        adapter = new StickyListHeadersListViewAdapter(listViewHelper, getLayoutInflater(), listViewHelper);
         lvMultiItem.setAdapter(adapter);
         lvMultiItem.setOnItemLongClickListener(this);
         adapter.addItems(fetchData());
+
+        // Set the Refreshable View to be the ListView and the refresh listener to be this.
+        mPullToRefreshAttacher.addRefreshableView(lvMultiItem, this);
+
+    }
+
+    @Override
+    public void onRefreshStarted(View view)
+    {
+        if( BuildConfig.DEBUG )
+        {
+            Log.d(Constants.LOG_TAG, "Refresh");
+        }
+
+        /**
+         * Simulate Refresh with 4 seconds sleep
+         */
+        new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected Void doInBackground(Void... params) {
+                try {
+                    Thread.sleep(Constants.SIMULATED_REFRESH_LENGTH);
+                } catch (InterruptedException e) {
+                    Log.e(Constants.LOG_TAG,"Task interrupted",e);
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void result) {
+                super.onPostExecute(result);
+
+                // Notify PullToRefreshAttacher that the refresh has finished
+                mPullToRefreshAttacher.setRefreshComplete();
+            }
+        }.execute();
     }
 
     @Override
@@ -93,37 +157,67 @@ public class ListActivity extends Activity implements AdapterView.OnItemLongClic
     {
         List<ItemWrapper> data = new ArrayList<ItemWrapper>();
 
-        data.add(new ItemWrapper(new Header("Header 1")));
 
-        OneValue oneValue;
-        TwoValues twoValues;
-        ThreeValues threeValues;
-        Header header;
+        Profile profile = new Profile();
+        profile.setCoverImgUrl("http://cdn.architectism.com/wp-content/uploads/2011/10/Fashion-Bar-BerlinRodeo-1-200x100.jpg");
+        profile.setProfileImgUrl("http://www.taaz.com/images/R50H50W/8BD5A4BEAC9388BEDC75CCACAAB13552.jpg");
+        profile.setName("Adriana Lima");
+        profile.setLocation("Los Angeles");
+        data.add(new ItemWrapper(profile));
+
+        Actions actions = new Actions();
+        data.add(new ItemWrapper(actions));
+
+        Item item;
         for (int i = 0; i < 40; i++)
         {
-            if (i == 20)
-            {
-                header = new Header("Header 2");
-                data.add(new ItemWrapper(header));
-            }
-            else if (i % 5 == 0)
-            {
-                threeValues = new ThreeValues("val " + i, i, i == 5 ? true : false);
-                data.add(new ItemWrapper(threeValues));
-            } else if (i % 2 == 0)
-            {
-                twoValues = new TwoValues("val " + i, i);
-                data.add(new ItemWrapper(twoValues));
-            } else
-            {
-                oneValue = new OneValue("val " + i);
-                data.add(new ItemWrapper(oneValue));
-            }
+            item = new Item();
+            item.setDate(new Date());
+            item.setDescription("Item " + i);
+            item.setQuantity(i);
 
+            data.add(new ItemWrapper(item));
         }
 
         return data;
 
+    }
+
+    public class PinnedSectionListViewAdapter extends MultiItemListAdapter implements PinnedSectionListView.PinnedSectionListAdapter
+    {
+
+        PinnedSectionListViewAdapter(ViewTypes viewTypes, LayoutInflater inflater, RowHolderFacade rowHolderFacade)
+        {
+            super(viewTypes, inflater, rowHolderFacade);
+        }
+
+        @Override
+        public boolean isItemViewTypePinned(int i)
+        {
+            return i == listViewHelper.getType(Actions.class);
+        }
+    }
+
+
+    public class StickyListHeadersListViewAdapter extends MultiItemListAdapter implements StickyListHeadersAdapter
+    {
+        StickyListHeadersListViewAdapter(ViewTypes viewTypes, LayoutInflater inflater, RowHolderFacade rowHolderFacade)
+        {
+            super(viewTypes, inflater, rowHolderFacade);
+        }
+
+
+        @Override
+        public View getHeaderView(int i, View view, ViewGroup viewGroup)
+        {
+            return null;
+        }
+
+        @Override
+        public long getHeaderId(int i)
+        {
+            return 0;
+        }
     }
 
 }
